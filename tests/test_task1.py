@@ -1,5 +1,4 @@
 import pytest
-from requests.exceptions import HTTPError
 
 from project.task1 import (
     create_and_save_two_cycles_graph,
@@ -32,9 +31,8 @@ def test_create_graph_two_cycles_graph(tmp_path):
     )
 
     assert output_file.exists()
-    content = output_file.read_text()
 
-    expected_content = """digraph {
+    expected_content = """digraph  {
 1;
 2;
 3;
@@ -69,6 +67,7 @@ def test_create_graph_one_node_cycle_self_loop_first(tmp_path):
     assert "0 -> 0 [key=0, label=loop];" in content
     assert "label=path" in content
 
+
 def test_create_graph_one_node_cycle_self_loop_second(tmp_path):
     output_file = tmp_path / "test_graph.dot"
     create_and_save_two_cycles_graph(
@@ -82,6 +81,7 @@ def test_create_graph_one_node_cycle_self_loop_second(tmp_path):
     assert "0 -> 0 [key=0, label=loop];" in content
     assert "label=path" in content
 
+
 def test_create_graph_one_node_cycle_self_loop_both(tmp_path):
     output_file = tmp_path / "test_graph.dot"
     create_and_save_two_cycles_graph(
@@ -94,6 +94,7 @@ def test_create_graph_one_node_cycle_self_loop_both(tmp_path):
     content = output_file.read_text()
     assert "0 -> 0 [key=0, label=loop1];" in content
     assert "0 -> 0 [key=1, label=loop2];" in content
+
 
 def test_create_graph_invalid_node_count():
     with pytest.raises(ValueError, match="node counts must be >= 1"):
