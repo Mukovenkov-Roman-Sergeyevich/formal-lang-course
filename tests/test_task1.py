@@ -1,6 +1,6 @@
 import pytest
 
-from project.task1 import (
+from project.graph_util import (
     create_and_save_two_cycles_graph,
     get_graph_info,
 )

@@ -2,8 +2,8 @@ import pytest
 from networkx import MultiDiGraph
 from pyformlang.finite_automaton import NondeterministicFiniteAutomaton, State
 
-from project.task2 import regex_to_dfa
-from project.task3 import AdjacencyMatrixFA, intersect_automata, tensor_based_rpq
+from project.automata_builder import regex_to_dfa
+from project.tensor_rpq import AdjacencyMatrixFA, intersect_automata, tensor_based_rpq
 
 
 class TestAdjacencyMatrixFA:

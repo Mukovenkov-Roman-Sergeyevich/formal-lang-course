@@ -7,7 +7,7 @@ from pyformlang.finite_automaton import (
 )
 from scipy.sparse.csgraph import shortest_path
 
-from project.task2 import graph_to_nfa, regex_to_dfa
+from project.automata_builder import graph_to_nfa, regex_to_dfa
 
 
 class AdjacencyMatrixFA:
